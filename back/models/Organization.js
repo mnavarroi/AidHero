@@ -3,31 +3,31 @@ const Schema = mongoose.Schema;
 
 const organizationSchema = new Schema(
     {
-        name: {
-            type: String,
-            required: "El nombre es obligatorio"
+        owner:{
+            type:Schema.Types.ObjectId,
+            ref:"User",
+            required: true
         },
-        last_name: {
-            type: String,
-            required: "El apellido es obligatorio"
-        },
+        comments:[{
+            type:Schema.Types.ObjectId,
+            ref:"Comment",
+        }],
         organization_name: {
             type: String,
             required: "El nombre de la organización es obligatorio"
         },
-        email: {
-            type: String,
-            required: "El email de contacto es obligatorio"
-        },
-        password: {
-            type: String,
-            required: true
-        },
-        profile_pic: String,
         description: {
             type: String,
             required: "Describe a qué se dedica tu fundación"
         },
+        profile_pic: {
+            type: String,
+            default: 'http://icons.iconarchive.com/icons/roundicons/100-free-solid/128/whale-icon.png'
+        },
+        website: String,
+        facebookAccount: String,
+        instagramAccount: String,
+        phoneNumber: String,
     },
     {
         timestamps: {

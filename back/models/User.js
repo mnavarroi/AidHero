@@ -11,15 +11,27 @@ const userSchema = new Schema(
             type: String,
             required: "El apellido es obligatorio"
         },
-        email: {
-            type: String,
-            required: "El email es obligatorio"
-        },
         password: {
             type: String,
             required: true
         },
-        profile_pic: String
+        email: {
+            type: String,
+            required: "El email es obligatorio"
+        },
+        locations: [String],
+        about: String,
+        facebookId: String,
+        profile_pic: {
+            type: String,
+            default: 'http://icons.iconarchive.com/icons/roundicons/100-free-solid/128/customer-service-icon.png'
+        },
+        organizations: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'ONG',
+            }
+        ],
     },
     {
         timestamps: {
