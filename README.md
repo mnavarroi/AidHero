@@ -1,1 +1,3 @@
-# aidhero-app
+# AidHero
+
+Volunteering made easy. Raising social consciousness.
