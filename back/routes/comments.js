@@ -1,28 +1,26 @@
-const router = require ('express').Router();
-const Comment = require ('../models/Comment');
-const User = require ('../models/User');
+const express = require("express");
+const router = express.Router();
+const Comment = require('../models/Comment');
+const User = require('../models/User');
 
-//Post new Experience
-router.post('/:id', (req,res,next)=>{
-    req.body.owner = req.params.id
-    Comment.create(req.body)
-        .then(comment=>{
-            return User.findByIdAndUpdate(req.params.id, {$push:{ comments: comment }}, {new: true})
-                .then(user=>{
-                    return res.status(201).json(user)
-                })
-                .catch(e=>{
-                    return res.status(501).json({e})
-                })
-        })
-        .catch(e=>{
-            return res.status(401).json(e)
-        })
+//Get Comment
+router.get('/', (req,res) => {
+  Comment.find()
+      .then(comments => {
+          console.log(comments)
+          res.status(202).json(comments)
+      })
+      .catch(err => {
+          console.log(err)
+      })
 });
-
-//Get Experiences
-router.get('/', (req,res)=>{
-    Comment.find()
+//Post Comment
+router.post('/', (req,res)=>{
+    const comment = new Comment ({
+        author : req.body.author,
+        comment : req.body.comment
+    });
+        comment.save()
         .then(comment =>{
             return res.status(202).json(comment);
         })
@@ -31,8 +29,10 @@ router.get('/', (req,res)=>{
         })
 });
 
+
 //Get one Experience
 router.get('/:id', (req,res)=>{
+    console.log(req.params.id);
     Comment.findById(req.params.id)
         .then(comment=>{
             if(!comment) return res.status(404);
@@ -43,8 +43,8 @@ router.get('/:id', (req,res)=>{
         })
 });
 
-//Edit a Experience
-router.put('/:id', (req,res)=>{
+//Update a Experience
+router.patch('/:id', (req,res)=>{
     Comment.findByIdAndUpdate(req.params.id, req.body, {new:true})
         .then(comment=>{
             return res.status(202).json(comment)
@@ -53,6 +53,7 @@ router.put('/:id', (req,res)=>{
             return res.status(500).json(e)
         })
 });
+
 
 //Delete a Experience
 router.delete('/:id', (req,res,next)=>{

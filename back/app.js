@@ -11,12 +11,12 @@ const path         = require('path');
 
 
 mongoose
-  .connect('mongodb://localhost/back', {useNewUrlParser: true})
-  .then(x => {
+    .connect(process.env.DB, {useNewUrlParser: true})
+    .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
   .catch(err => {
-    console.error('Error connecting to mongo', err)
+    console.error('Error connecting to Mongo', err)
   });
 
 const app_name = require('./package.json').name;
@@ -50,9 +50,19 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 app.locals.title = 'Express - Generated with IronGenerator';
 
 
-
 const index = require('./routes/index');
-app.use('/', index);
+const auth = require('./routes/auth');
+const comments = require('./routes/comments');
+const organizations = require ('./routes/organizations');
+const posts = require ('./routes/posts');
+const users = require ('./routes/users');
 
+
+app.use('/', index);
+app.use('/api/auth',auth);
+app.use('/api/comments', comments);
+app.use('/api/organizations', organizations);
+app.use('/api/posts', posts);
+app.use('/api/users', users);
 
 module.exports = app;
