@@ -9,7 +9,7 @@ const postSchema = new Schema(
         },
         author: {
             type: Schema.Types.ObjectId,
-            ref: "Organization",
+            ref: "User",
             required: "Este proyecto debe de tener un responsable"
         },
         organization_name: {

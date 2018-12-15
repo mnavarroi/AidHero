@@ -3,36 +3,10 @@ const User = require ('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-
 //Facebook login
 /*router.post('/facebook/login', passport.authenticate('facebook-token'), (req,res)=>{
     return res.json(req.user)
 });*/
-
-
-//Login
-router.post("/login", async (req, res) => {
-    const user = await User.findOne({email: req.body.email});
-    if(!user) return res.status(404).json({msg: "The email is incorrect"});
-
-    let validPassword = bcrypt.compareSync(req.body.password, user.password);
-
-    if(!validPassword) return res.status(500).json({msg:"The password is incorrect"});
-
-    const token = jwt.sign(
-        {id: user._id},
-        process.env.SECRET,
-        {
-            expiresIn: 8600
-        });
-
-    delete user._doc.password;
-
-    console.log(user);
-
-    res.status(200).json({user, token});
-
-});
 
 //Signup
 router.post("/signup", (req, res) => {
@@ -47,11 +21,33 @@ router.post("/signup", (req, res) => {
     User.create(req.body)
 
         .then(() => {
-            res.status(201).json({msg: "The user was succesfully created"})
+            res.status(201).json({msg: "The user was successfully created"})
         })
         .catch(err => {
-            res.status(500).json({err, msg: "The user can't be created"})
+            res.status(500).json({err, msg: "The user is already registered"})
         })
+
+});
+
+//Login
+router.post("/login", async (req, res) => {
+    const user = await User.findOne({email: req.body.email});
+    if(!user) return res.status(404).json({msg: "The email is incorrect"});
+
+    let validPassword = bcrypt.compareSync(req.body.password, user.password);
+
+    if(!validPassword) return res.status(404).json({msg:"The password is incorrect"});
+
+    const token = jwt.sign(
+        {id: user._id},
+        process.env.SECRET,
+        {
+            expiresIn: 12000
+        });
+
+    delete user._doc.password;
+
+    res.status(200).json({user, token});
 
 });
 
@@ -70,6 +66,5 @@ router.post("/signup", (req, res) => {
             res.status(200).json({user});
         })
 });*/
-
 
 module.exports = router;

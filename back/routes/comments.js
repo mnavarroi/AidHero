@@ -6,8 +6,9 @@ const User = require('../models/User');
 //Get Comment
 router.get('/', (req,res) => {
   Comment.find()
+      .populate('author')
       .then(comments => {
-          console.log(comments)
+          console.log(comments);
           res.status(202).json(comments)
       })
       .catch(err => {
@@ -30,10 +31,11 @@ router.post('/', (req,res)=>{
 });
 
 
-//Get one Experience
+//Get one Comment
 router.get('/:id', (req,res)=>{
     console.log(req.params.id);
     Comment.findById(req.params.id)
+        .populate('author')
         .then(comment=>{
             if(!comment) return res.status(404);
             return res.status(202).json(comment);
@@ -43,7 +45,7 @@ router.get('/:id', (req,res)=>{
         })
 });
 
-//Update a Experience
+//Update a Comment
 router.patch('/:id', (req,res)=>{
     Comment.findByIdAndUpdate(req.params.id, req.body, {new:true})
         .then(comment=>{
@@ -55,7 +57,7 @@ router.patch('/:id', (req,res)=>{
 });
 
 
-//Delete a Experience
+//Delete a Comment
 router.delete('/:id', (req,res,next)=>{
     Comment.findByIdAndRemove(req.params.id)
         .then(comment=>{

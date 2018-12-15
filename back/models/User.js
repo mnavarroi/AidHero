@@ -18,7 +18,7 @@ const userSchema = new Schema(
         email: {
             type: String,
             required: "El email es obligatorio",
-            unique: [true, "The email is already registered"]
+            unique: [true, "Este correo ya está ha registrado"]
         },
         locations: [String],
         about: String,
