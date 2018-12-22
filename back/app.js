@@ -8,21 +8,28 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const cors         = require('cors');
 
 
 mongoose
     .connect(process.env.DB, {useNewUrlParser: true})
     .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    console.log(`Conectado a Mongo! Nombre de la base de datos: "${x.connections[0].name}"`)
   })
   .catch(err => {
-    console.error('Error connecting to Mongo', err)
+    console.error('Error al conectarse con Mongo', err)
   });
+
+const corsOptions = {
+  origin: true,
+    'credentials': true,
+};
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+app.use(cors(corsOptions));
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -64,5 +71,9 @@ app.use('/api/comments', comments);
 app.use('/api/organizations', organizations);
 app.use('/api/posts', posts);
 app.use('/api/users', users);
+
+app.all('/*', (req,res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 module.exports = app;

@@ -28,7 +28,7 @@ const postSchema = new Schema(
         },
         location:{
             type: String,
-            required: "La ubicación es necesaria"
+            required: "La ubicación donde necesitas la ayuda es necesaria"
         }
     },
     {

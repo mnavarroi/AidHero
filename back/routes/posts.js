@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Post = require('../models/Post');
-const User = require('../models/User');
+
 
 //Create a new post
 router.post('/', (req,res)=>{
@@ -66,7 +66,7 @@ router.delete('/:id', (req,res,next)=>{
             return res.status(202).json(post)
         })
         .catch(e=>{
-            return res.status(500).json({ message: 'Something is off'})
+            return res.status(500).json({ message: "This user can't be deleted"})
         })
 });
 
