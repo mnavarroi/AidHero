@@ -11,10 +11,17 @@ class Home extends Component {
                   uk-img="true">
 
 
-                <h1 className="header_text" > GIVE BACK A LITTLE OF YOUR TIME_ </h1>
+                <h1 className="header_text"> GIVE A LITTLE OF YOUR TIME BACK_ </h1>
+
+                <div className='cta_header'>
+                    <p uk-margin>
+                        <button className="button uk-button uk-button-default">Show me the projects</button>
+                    </p>
+                </div>
+
+                <h2></h2>
 
             </div>
-
         )
     }
 }
