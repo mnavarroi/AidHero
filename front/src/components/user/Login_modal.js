@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Modal, Form, Input, Button} from 'antd'
-import {login} from '../../services'
+import {login, base_url} from '../../services'
+import axios from "axios";
 
 class Login_modal extends Component {
 
@@ -16,14 +17,26 @@ class Login_modal extends Component {
         let field = e.target.name;
         user[field] = e.target.value;
         this.setState({user});
-        console.log(this.state.user);
+        //console.log(this.state.user);
     }
 
     submit=(e)=>{
-        e.preventDefault()
-        login(this.state.user)
+        e.preventDefault();
+        axios.post(`${base_url}/auth/login`, this.state.user)
+            .then(res => {
+                localStorage.setItem("token", res.data.token);
+                localStorage.setItem("user", JSON.stringify(res.data.user));
+                const user=  res.data.user;
+                const logged = true;
+                this.props.close(false);
+                this.props.entro(user, logged)
 
-    }
+            })
+            .catch(err => {
+                //console.log("Error Login =====> ", err);
+            })
+
+    };
 
     render() {
 
@@ -87,7 +100,6 @@ class Login_modal extends Component {
                     </Form.Item>
                 </Form>
             </Modal>
-
 
         )
     }

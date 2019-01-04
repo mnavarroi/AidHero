@@ -74,7 +74,7 @@ class Signup_modal extends Component {
                     >
                         <Input
                             onChange={this.handleChange}
-                            name={"Last_name"}
+                            name={"last_name"}
                             required
                         />
                     </Form.Item>

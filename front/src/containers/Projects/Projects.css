@@ -1,0 +1,17 @@
+h2{
+    font-family: Merriweather, serif !important;
+    color: #303A52 !important;
+    font-size: 40px !important;
+    font-weight: 900 !important;
+    margin: 50px !important;
+    letter-spacing: -1.4px;
+}
+
+.project-card{
+    width: 320px !important;
+    margin: 50px;
+}
+
+.uk-card-body{
+    margin: -10px;
+}

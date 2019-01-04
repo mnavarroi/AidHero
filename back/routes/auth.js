@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 
 //Signup
 router.post("/signup", (req, res) => {
-
+    console.log("======>", req.body)
     if(req.body.password !== req.body.confirmPassword) return res.status(500).json({msg: "The password doesn't match"});
 
     const salt = bcrypt.genSaltSync(256);
@@ -24,7 +24,8 @@ router.post("/signup", (req, res) => {
             res.status(201).json({msg: "The user was successfully created"})
         })
         .catch(err => {
-            res.status(500).json({err, msg: "The user is already registered"})
+            res.status(500).json({err, msg: "Ocurrio un error"})
+            console.log("===>",err)
         })
 
 });
