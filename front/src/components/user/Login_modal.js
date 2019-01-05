@@ -18,7 +18,6 @@ class Login_modal extends Component {
         let field = e.target.name;
         user[field] = e.target.value;
         this.setState({user});
-        console.log(user)
     };
 
     submit=(e)=>{
@@ -34,7 +33,6 @@ class Login_modal extends Component {
 
             })
             .catch(err => {
-                console.log("Error Login =====> ", err.response.data.msg);
             })
 
     };
@@ -87,7 +85,6 @@ class Login_modal extends Component {
                     <Form.Item
                         {...formItemLayout}
                         label="Password"
-                        //required (este pone el asterisco rojo)
                     >
                         <Input
                             onChange={this.handleChange}
