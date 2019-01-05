@@ -16,7 +16,5 @@ export const SliderH = () =>(
                 </li>
             )}
         </ul>
-
     </div>
-
 );

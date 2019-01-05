@@ -11,3 +11,23 @@ h2{
     width: 320px !important;
     margin: 30px;
 }
+
+.cards p{
+    font-family: Lato, sans-serif;
+    margin: 40px !important;
+    margin-left: 80px !important;
+    font-size: 18px;
+}
+
+.cards h5{
+    font-family: Lato, sans-serif;
+    margin: 40px !important;
+    margin-left: 80px !important;
+    font-size: 18px;
+}
+
+.see-more{
+    color: #13A078;
+    font-family: Lato, sans-serif !important;
+    font-size: 16px !important;
+}

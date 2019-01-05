@@ -4,7 +4,7 @@ import './ListProfile.css';
 export const ListProfile = () =>(
     <div className='list'>
         <div className='your-past-projects'>
-            <h3>Your past projects</h3>
+            <h3>This are your past projects</h3>
         </div>
         <ul className="uk-list uk-list-striped">
             <li>Help these dogs to find a new home</li>

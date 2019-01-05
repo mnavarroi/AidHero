@@ -1,12 +1,21 @@
 .footer{
     background-color: #303A52;
-    color: white;
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
     text-transform: uppercase;
-    size: 24px;
     line-height: 42px;
-    padding: 90px;
+    padding: 40px;
     padding-left: 80px;
     height: 35em;
 }
+
+.logomin{
+    margin-left:-40px;
+}
+
+.footer-links li{
+    color: white;
+    font-family: Lato, sans-serif;
+    font-weight: 300 !important;
+    margin: 20px;
+    font-size: 16px;
+}
+

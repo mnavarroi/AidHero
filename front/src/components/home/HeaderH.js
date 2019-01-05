@@ -1,8 +1,8 @@
 import React from 'react'
 import ImgHome from "../../images/home.png";
-import {Hw} from "./Hw";
 import './Home.css';
 import './HeaderH.css';
+import {Link} from "react-router-dom";
 
 export const HeaderH = () =>(
     <div className='header uk-height-large uk-flex uk-flex-left uk-flex-middle uk-background-cover uk-light'
@@ -11,11 +11,12 @@ export const HeaderH = () =>(
          uk-img="true">
 
 
-        <h1 className="header_text"> GIVE A LITTLE OF YOUR TIME BACK_ </h1>
+        <h1 className="header_text"> GIVE A LITTLE OF YOUR TIME BACK_ <a to='/projects'>Show me the projects</a></h1>
+
 
         <div className='cta_header'>
             <p uk-margin>
-                <button className="button uk-button uk-button-default">Show me the projects</button>
+                <Link to='/projects'>Show me the projects</Link>
             </p>
         </div>
     </div>

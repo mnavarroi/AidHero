@@ -4,6 +4,9 @@ import Home from './containers/Home/Home';
 import Projects from './containers/Projects/Projects';
 import ProjectDetails from './containers/ProjectDetails/ProjectDetails';
 import Profile from './containers/Profile/Profile';
+import FAQ from './containers/FAQ/FAQ';
+import Schedule from './containers/Profile/Schedule';
+
 
 const Router = () => (
     <Switch>
@@ -11,6 +14,8 @@ const Router = () => (
         <Route exact path={"/Projects"} component={Projects} />
         <Route exact path={"/ProjectDetails"} component={ProjectDetails} />
         <Route exact path={"/Profile"} component={Profile} />
+        <Route exact path={"/FAQ"} component={FAQ} />
+        <Route exact path={"/Schedule"} component={Schedule} />
     </Switch>
 );
 

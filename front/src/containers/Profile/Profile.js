@@ -12,7 +12,6 @@ class Profile extends Component {
                     Welcome back Manuel!
                 </h2>
                 <ListProfile/>
-                <NeedsP/>
                 <FooterH/>
             </div>
         )

@@ -3,6 +3,7 @@ import React from "react";
 import HIW1 from '../../images/hiw-1.svg';
 import HIW2 from '../../images/hiw-2.svg';
 import HIW3 from '../../images/hiw-3.svg';
+import {Link} from "react-router-dom";
 import './Hw.css';
 import { Card, Col, Row } from 'antd';
 const { Meta } = Card;
@@ -45,7 +46,7 @@ export const Hw = ()=>(
             </Row>
 
             <p uk-margin="true">
-                <button className="button-hiw uk-button uk-button-default">Show me the projects</button>
+                <Link to='/Projects' className="button-hiw uk-button uk-button-default">Show me the projects</Link>
             </p>
 
         </div>

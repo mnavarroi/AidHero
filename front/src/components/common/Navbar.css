@@ -24,7 +24,3 @@ a{
     font-size: 12px !important;
     font-variant: small-caps !important;
 }
-
-a:hover{
-    text-decoration-line: line-through;
-}

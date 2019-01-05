@@ -5,6 +5,7 @@ import Signup_modal from '../user/Signup_modal';
 import Login_modal from '../user/Login_modal';
 import {Link} from 'react-router-dom'
 
+
 class NavBar extends Component{
     state = {
         modal1Visible: false,

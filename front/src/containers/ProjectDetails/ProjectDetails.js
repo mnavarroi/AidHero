@@ -5,6 +5,7 @@ import {HeaderP} from "../../components/projectdetail/HeaderP";
 import {DescriptionP} from "../../components/projectdetail/DescriptionP";
 import {NeedsP} from "../../components/projectdetail/NeedsP";
 import {FooterH} from '../../components/common/Footer';
+import {Link} from "react-router-dom";
 
 class ProjectDetails extends Component {
     render() {
@@ -18,7 +19,7 @@ class ProjectDetails extends Component {
                 <div className='details'>
                     <DescriptionP/>
                     <NeedsP/>
-                    <button>I want to give my time to this project</button>
+                    <Link to='/Schedule' className="button-hiw uk-button uk-button-default">I want to give my time to this project</Link>
                 </div>
                 <FooterH/>
             </div>
