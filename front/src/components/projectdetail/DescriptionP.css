@@ -1,0 +1,34 @@
+.project-headers h3{
+    font-family: Merriweather, serif !important;
+    font-weight: 900 !important;
+    color: #303A52 !important;
+    font-size: 28px !important;
+    letter-spacing: -1px;
+}
+
+.description p{
+    font-family: Lato, sans-serif;
+    line-height: 2.4 !important;
+    width: 850px;
+    margin:40px;
+}
+
+
+button{
+    background-color: #13A078;
+    color: white !important;
+    border: none ;
+    padding: 10px 70px;
+    text-transform: uppercase !important;
+    font-size: 12px !important;
+    margin: 40px !important;
+}
+
+.avatar{
+    margin-top:60px;
+    margin-left:100px;
+}
+
+.uk-section uk-section-default {
+    padding: 5px !important;
+}

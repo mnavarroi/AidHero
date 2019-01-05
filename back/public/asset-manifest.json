@@ -1,18 +1,18 @@
 {
   "main.css": "/static/css/main.9985c9e3.chunk.css",
-  "main.js": "/static/js/main.9173805b.chunk.js",
-  "main.js.map": "/static/js/main.9173805b.chunk.js.map",
+  "main.js": "/static/js/main.4b55fc6e.chunk.js",
+  "main.js.map": "/static/js/main.4b55fc6e.chunk.js.map",
   "static/css/1.71f65769.chunk.css": "/static/css/1.71f65769.chunk.css",
   "static/js/1.ebd0510a.chunk.js": "/static/js/1.ebd0510a.chunk.js",
   "static/js/1.ebd0510a.chunk.js.map": "/static/js/1.ebd0510a.chunk.js.map",
   "runtime~main.js": "/static/js/runtime~main.229c360f.js",
   "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/1.71f65769.chunk.css.map": "/static/css/1.71f65769.chunk.css.map",
+  "static/css/main.9985c9e3.chunk.css.map": "/static/css/main.9985c9e3.chunk.css.map",
   "static/media/home.png": "/static/media/home.b708e6d1.png",
   "static/media/aidhero_logo.svg": "/static/media/aidhero_logo.b0a80ffd.svg",
   "static/media/aidhero_logo_min.svg": "/static/media/aidhero_logo_min.89b83fde.svg",
-  "static/css/main.9985c9e3.chunk.css.map": "/static/css/main.9985c9e3.chunk.css.map",
+  "static/css/1.71f65769.chunk.css.map": "/static/css/1.71f65769.chunk.css.map",
   "index.html": "/index.html",
-  "precache-manifest.9d1d62d7172b64295c681c721fcc9790.js": "/precache-manifest.9d1d62d7172b64295c681c721fcc9790.js",
+  "precache-manifest.813a9c3366200e341fdcbf85cfc5a1b3.js": "/precache-manifest.813a9c3366200e341fdcbf85cfc5a1b3.js",
   "service-worker.js": "/service-worker.js"
 }

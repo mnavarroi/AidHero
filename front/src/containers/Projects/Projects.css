@@ -9,9 +9,5 @@ h2{
 
 .project-card{
     width: 320px !important;
-    margin: 50px;
-}
-
-.uk-card-body{
-    margin: -10px;
+    margin: 30px;
 }

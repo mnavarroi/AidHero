@@ -16,7 +16,6 @@ class Signup_modal extends Component {
         let field = e.target.name;
         user[field] = e.target.value;
         this.setState({user});
-        console.log(this.state.user);
     };
 
     submit=(e)=>{
@@ -51,7 +50,7 @@ class Signup_modal extends Component {
         return (
 
             <Modal
-                title="Registro"
+                title="Sign up"
                 centered
                 visible={this.props.open}
                 onCancel={()=>this.props.close(false)}
@@ -60,7 +59,7 @@ class Signup_modal extends Component {
                 <Form onSubmit={this.submit}>
                     <Form.Item
                         {...formItemLayout}
-                        label="Nombre"
+                        label="Name"
                     >
                         <Input
                             onChange={this.handleChange}
@@ -70,7 +69,7 @@ class Signup_modal extends Component {
                     </Form.Item>
                     <Form.Item
                         {...formItemLayout}
-                        label="last_name"
+                        label="Last name"
                     >
                         <Input
                             onChange={this.handleChange}
@@ -80,7 +79,7 @@ class Signup_modal extends Component {
                     </Form.Item>
                     <Form.Item
                         {...formItemLayout}
-                        label="E-mail"
+                        label="e-mail"
                     >
                         <Input
                             onChange={this.handleChange}
@@ -91,7 +90,7 @@ class Signup_modal extends Component {
                     </Form.Item>
                     <Form.Item
                         {...formItemLayout}
-                        label="Contraseña"
+                        label="Password"
                     >
                         <Input
                             onChange={this.handleChange}
@@ -102,7 +101,7 @@ class Signup_modal extends Component {
                     </Form.Item>
                     <Form.Item
                         {...formItemLayout}
-                        label="Confirm-password"
+                        label="Confirm password"
                     >
                         <Input
                             onChange={this.handleChange}

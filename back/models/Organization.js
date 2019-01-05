@@ -14,11 +14,11 @@ const organizationSchema = new Schema(
         }],
         organization_name: {
             type: String,
-            required: "El nombre de la organización es obligatorio"
+            required: "The name of your organization is required"
         },
         description: {
             type: String,
-            required: "Describe a qué se dedica tu fundación"
+            required: "Please describe what does your NGO do."
         },
         profile_pic: {
             type: String,

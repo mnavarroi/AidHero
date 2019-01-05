@@ -5,17 +5,19 @@ import {SliderH} from '../../components/home/SliderH';
 import {FooterH} from '../../components/common/Footer';
 import ImgHome from "../../images/home.png";
 import './Home.css'
+import Quote from "../../components/home/Quote";
+
 const styles = {
     container:{
         display:'flex',
-        flexDirection:'column'
+        flexDirection:'column',
     }
 };
 class Home extends Component {
     render() {
         return (
             <div>
-                <div className='header uk-height-medium uk-flex uk-flex-left uk-flex-middle uk-background-cover uk-light'
+                <div className='header  uk-height-large uk-flex uk-flex-left uk-flex-middle uk-background-cover uk-light'
                      data-src={ImgHome}
                      data-srcset={ImgHome}
                      uk-img="true">
@@ -31,6 +33,7 @@ class Home extends Component {
                 </div>
                 <Hw/>
                 <SliderH/>
+                <Quote/>
                 <FooterH/>
             </div>
         )

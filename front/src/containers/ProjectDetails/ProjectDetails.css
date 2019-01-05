@@ -1,3 +1,10 @@
-import React, {Component} from 'react';
-import './ProjectDetails.css';
-import Footer from '../../components/common/Footer'
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.project-images{
+
+}

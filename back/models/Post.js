@@ -5,30 +5,30 @@ const postSchema = new Schema(
     {
         post_name: {
             type: String,
-            required: "El nombre de tu proyecto es obligatorio"
+            required: "The name of your project is required"
         },
         author: {
             type: Schema.Types.ObjectId,
             ref: "User",
-            required: "Este proyecto debe de tener un responsable"
+            required: "This project should have a lead"
         },
         organization_name: {
             type: Schema.Types.ObjectId,
             ref: "Organization",
-            required: "Este proyecto debe pertenecer a una ONG"
+            required: "This project should be part of an NGO"
         },
         pics: String,
         description: {
             type: String,
-            required: "Describe tu proyecto"
+            required: "Please write a description for your project"
         },
         needs: {
             type: String,
-            required: "Describe qué estás buscando"
+            required: "Please describe what are your needs"
         },
         location:{
             type: String,
-            required: "La ubicación donde necesitas la ayuda es necesaria"
+            required: "The location is required"
         }
     },
     {

@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {Modal, Form, Input, Button} from 'antd'
-import {login, base_url} from '../../services'
+import {base_url} from '../../services'
 import axios from "axios";
+import './Login_modal.css';
 
 class Login_modal extends Component {
 
@@ -17,8 +18,8 @@ class Login_modal extends Component {
         let field = e.target.name;
         user[field] = e.target.value;
         this.setState({user});
-        //console.log(this.state.user);
-    }
+        console.log(user)
+    };
 
     submit=(e)=>{
         e.preventDefault();
@@ -33,7 +34,7 @@ class Login_modal extends Component {
 
             })
             .catch(err => {
-                //console.log("Error Login =====> ", err);
+                console.log("Error Login =====> ", err.response.data.msg);
             })
 
     };
@@ -63,7 +64,7 @@ class Login_modal extends Component {
             },
         };
         return (
-
+<div className='modal-login'>
             <Modal
                 title="Login"
                 centered
@@ -75,7 +76,7 @@ class Login_modal extends Component {
                 <Form onSubmit={this.submit}>
                     <Form.Item
                         {...formItemLayout}
-                        label="email"
+                        label="e-mail"
                     >
                         <Input
                             onChange={this.handleChange}
@@ -85,7 +86,7 @@ class Login_modal extends Component {
                     </Form.Item>
                     <Form.Item
                         {...formItemLayout}
-                        label="password"
+                        label="Password"
                         //required (este pone el asterisco rojo)
                     >
                         <Input
@@ -100,7 +101,7 @@ class Login_modal extends Component {
                     </Form.Item>
                 </Form>
             </Modal>
-
+        </div>
         )
     }
 }

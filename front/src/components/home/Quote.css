@@ -1,0 +1,21 @@
+.flex{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 180px;
+    align-items: center;
+}
+
+.quote{
+    font-family: Merriweather, serif;
+    font-weight: 900;
+    font-size: 3em;
+    color: #303A52;
+    align-items: center;
+}
+
+.author{
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}

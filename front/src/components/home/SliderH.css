@@ -1,3 +1,15 @@
 .uk-position-relative{
-    margin: 180px 40px ;
+    margin: 20px 40px ;
+}
+
+.project-slider h4{
+    font-family: Merriweather, serif;
+    color: #303a52 !important;
+    font-size: 24px;
+    font-weight: 700 !important;
+    width: 140px;
+}
+
+.slider-images{
+    margin: 0;
 }

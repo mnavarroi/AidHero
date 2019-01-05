@@ -5,7 +5,7 @@ import './Home.css';
 import './HeaderH.css';
 
 export const HeaderH = () =>(
-    <div className='header uk-height-medium uk-flex uk-flex-left uk-flex-middle uk-background-cover uk-light'
+    <div className='header uk-height-large uk-flex uk-flex-left uk-flex-middle uk-background-cover uk-light'
          data-src={ImgHome}
          data-srcset={ImgHome}
          uk-img="true">

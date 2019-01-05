@@ -5,11 +5,11 @@ const userSchema = new Schema(
     {
         name: {
             type: String,
-            required: "El nombre es obligatorio"
+            required: "Name is required"
         },
         last_name: {
             type: String,
-            required: "El apellido es obligatorio"
+            required: "Last name is required"
         },
         password: {
             type: String,
@@ -17,8 +17,8 @@ const userSchema = new Schema(
         },
         email: {
             type: String,
-            required: "El email es obligatorio",
-            unique: [true, "Este correo ya está ha registrado"]
+            required: "E-mail is required",
+            unique: [true, "This e-mail has been registered before."]
         },
         locations: [String],
         about: String,
