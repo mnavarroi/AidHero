@@ -8,6 +8,7 @@ import {FooterH} from '../../components/common/Footer';
 import {Link} from "react-router-dom";
 
 class ProjectDetails extends Component {
+    //this.match.params.id
     render() {
         return (
             <div>

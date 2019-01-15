@@ -12,6 +12,7 @@ router.post('/', (req,res)=>{
         description: req.body.description,
         needs: req.body.needs,
         location: req.body.location,
+        pics: req.body.pics,
     });
     post.save()
         .then(post =>{
@@ -22,7 +23,7 @@ router.post('/', (req,res)=>{
         })
 });
 
-//Get post
+//Get all posts
 router.get('/', (req,res) => {
     Post.find()
         .then(posts => {
@@ -39,6 +40,19 @@ router.get('/', (req,res) => {
 router.get('/:id', (req,res)=>{
     console.log(req.params.id);
     Post.findById(req.params.id)
+        .then(post=>{
+            if(!post) return res.status(404);
+            return res.status(202).json(post);
+        })
+        .catch(e=>{
+            return res.status(500).json(e)
+        })
+});
+
+//Get each user projects
+router.get('/owner/:id', (req,res)=>{
+    console.log(req.params.id);
+    Post.find({author:req.params.id})
         .then(post=>{
             if(!post) return res.status(404);
             return res.status(202).json(post);

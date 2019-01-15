@@ -27,12 +27,11 @@ const userSchema = new Schema(
             type: String,
             default: 'http://icons.iconarchive.com/icons/roundicons/100-free-solid/128/customer-service-icon.png'
         },
-        organizations: [
+        organizations:
             {
                 type: Schema.Types.ObjectId,
-                ref: 'ONG',
-            }
-        ],
+                ref: 'Organization',
+            },
     },
     {
         timestamps: {

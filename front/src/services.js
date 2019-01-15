@@ -1,6 +1,6 @@
 import axios from 'axios';
-//export const base_url = 'http://localhost:3000/api';
-export const base_url = 'https://aidhero.herokuapp.com/api';
+export const base_url = 'http://localhost:3000/api';
+//export const base_url = 'https://aidhero.herokuapp.com/api';
 
 export const signup = (user) => {
     axios.post(`${base_url}/auth/signup`, user)
@@ -19,4 +19,12 @@ export const login = (user) => {
         })
         .catch(err => {
         })
+};
+
+export const getPosts = () => {
+    return axios.get(`${base_url}/posts/`)
+};
+
+export const newPost = (data) => {
+  return axios.post(`${base_url}/posts/`,data)
 };

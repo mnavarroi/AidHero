@@ -2,63 +2,52 @@ import React, {Component} from 'react';
 import './Projects.css';
 import Footer from '../../components/common/Footer'
 import {Link} from "react-router-dom";
+import {Button} from 'antd'
+import {getPosts} from "../../services";
+import Project_modal from "../../components/user/Project_modal";
 
 class Projects extends Component {
     state= {
-        projects: [
-            {
-                img: "elderly.png",
-                name: "Listen to this awesome stories",
-                description: "This fellows have some awesome stories to tell and they are looking for someone to share them with. You might be one of the lucky ones."
-            },
-            {
-                img: "dogs.png",
-                name: "Help these dogs find a new home",
-                description: "Meet Tulip, Jackson and Meatball on Saturday, January 5 from Noon to 3pm at the Olathe PetSmart at 119th & Strang Line. These dogs are scheduled to be with volunteers from Ray of Hope."
-            },
-            {
-                img: "plant.png",
-                name: "Breathe fresh air",
-                description: "Help our environment and help new and fresh air be renewed with trees and plants. Mauris risus nibh, tincidunt non ex et, mattis placerat quam. "
-            },
-            {
-                img: "jail.png",
-                name: "Spent some quality time with reformed men and women",
-                description: "We will be sure to post a comment. Tomorrow, from the Radio Buttons, but some pain. Write on the brakes now. No comments were, at best, but the health care financing or laughter."
-            },
-            {
-                img: "kids.png",
-                name: "Play with these incredible kids",
-                description: "Welcome to learn more about popular culture, and the time, no, nor to grow strong. We look at the television cable television members. In the valley, the housing in targeted monitoring."
-            },
-            {
-                img: "teach.png",
-                name: "Teach something you are good for for free",
-                description: "replacement or consolidation of the bed, a man obsessed with reducing illegal betting options. Wow, very attractive market, from my visitors."
-            },
-            {
-                img: "cat.png",
-                name: "Help vets take care of this stray cats",
-                description: "Recent development time to hate, a time bar beef. our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims."
-            },
-            {
-                img: "build.png",
-                name: "Build homes for communities",
-                description: "The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
-            },
-            {
-                img: "dog.png",
-                name: "Walk rescued dogs",
-                description: "These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure."
-            },
-            ]
+        modal3Visible:false,
+        projects: [],
+        user:{}
     };
+    componentWillMount(){
+        const user = JSON.parse(localStorage.getItem('user'));
 
+            this.readPost()
+            this.setState({user})
+
+
+    }
+    readPost=(post)=>{
+        if(post){
+            console.log("si funciona",post)
+            let {projects}=this.state
+            projects.push(post)
+            this.setState({projects})
+        }else{
+            console.log("recaarga")
+            getPosts().then(res => {
+                this.setState({projects:res.data})
+            })
+        }
+
+    }
+    modalOpenProject=()=>{
+        let {modal3Visible}=this.state;
+        modal3Visible =! modal3Visible
+        console.log("modal",modal3Visible)
+        this.setState({modal3Visible})
+    }
     render() {
-        let {projects} = this.state;
+        let {projects,modal3Visible,user} = this.state;
+        console.log("esto es", projects);
         return (
             <div>
-                <h2>Projects</h2>
+                <Project_modal open={modal3Visible} close={this.modalOpenProject} user={user} readPost={this.readPost}/>
+
+                <h2>Projects</h2> <Button onClick={this.modalOpenProject} style={{color:"red"}}>Editar</Button>
                 <div classname="cards">
                 <h5>You can review each and every project and decide which one makes more sense for you.</h5>
                 </div>
@@ -69,13 +58,13 @@ class Projects extends Component {
                                 <div className='project-card'>
                                     <div className="uk-card uk-card-default">
                                         <div className="uk-card-media-top">
-                                        <img src={data.img} alt=""/>
+                                        <img src={data.pics} alt=""/>
                                         </div>
                                         <div className="uk-card-body">
-                                            <h3 className="uk-card-title">{data.name}</h3>
+                                            <h3 className="uk-card-title">{data.post_name}</h3>
                                             <p>{data.description}</p>
                                             <div className='see-more'>
-                                            <Link to={"/ProjectDetails"}>See more</Link>
+                                            <Link to={`/ProjectDetails/${data._id}`}>See more</Link>
                                             </div>
                                         </div>
                                     </div>

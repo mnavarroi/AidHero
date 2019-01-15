@@ -28,7 +28,6 @@ const postSchema = new Schema(
         },
         location:{
             type: String,
-            required: "The location is required"
         }
     },
     {

@@ -6,6 +6,7 @@ import Login_modal from '../user/Login_modal';
 import {Link} from 'react-router-dom'
 
 
+
 class NavBar extends Component{
     state = {
         modal1Visible: false,
@@ -40,7 +41,7 @@ class NavBar extends Component{
         this.setState({user,logged})
     };
     render(){
-        let {modal2Visible,modal1Visible, user,logged} =this.state;
+        let { modal2Visible,modal1Visible, user,logged} =this.state;
         return(
             <div className='navbar'>
                 <nav className="uk-navbar-container uk-navbar-transparent" uk-navbar="mode: click">
@@ -68,6 +69,9 @@ class NavBar extends Component{
 
                 <Login_modal open={modal1Visible} close={this.modalOpenLogin} entro={this.entro} />
                 <Signup_modal open={modal2Visible} close={this.modalOpen} />
+
+
+
 
             </div>
         );

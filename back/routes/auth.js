@@ -53,19 +53,17 @@ router.post("/login", async (req, res) => {
 });
 
 //Update?
-/*router.patch("/:id",upload.single("picture"), (req, res) => {
+router.patch("/:id", (req, res) => {
     let user = {};
 
     Object.keys(req.body).forEach(key => {
         user[key] = req.body[key];
     });
-    if(req.file) user.profile_picture = req.file.url;
-
 
     User.findByIdAndUpdate(req.params.id, {$set: user}, {new:true})
         .then(user => {
             res.status(200).json({user});
         })
-});*/
+});
 
 module.exports = router;
