@@ -28,3 +28,11 @@ export const getPosts = () => {
 export const newPost = (data) => {
   return axios.post(`${base_url}/posts/`,data)
 };
+
+export const getOwnPosts = (id) => {
+    return axios.get(`${base_url}/posts/owner/${id}`)
+};
+
+export const updateProfile = (id,data) => {
+    return axios.patch(`${base_url}/auth/${id}`,data)
+};

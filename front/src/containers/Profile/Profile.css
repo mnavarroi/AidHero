@@ -1,0 +1,10 @@
+.align-header{
+    display: flex
+}
+
+.button-update{
+    width:400px;
+    position: absolute;
+    right: 50px;
+    top: 90px;
+}

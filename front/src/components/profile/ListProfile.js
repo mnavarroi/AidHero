@@ -1,15 +1,26 @@
 import React from 'react';
 import './ListProfile.css';
+import {Link} from "react-router-dom";
 
-export const ListProfile = () =>(
+export const ListProfile = ({projects}) =>(
     <div className='list'>
         <div className='your-past-projects'>
-            <h3>This are your past projects</h3>
+            <h3>These are your past projects</h3>
         </div>
         <ul className="uk-list uk-list-striped">
-            <li>Help these dogs to find a new home</li>
-            <li>Listen to this awesome grandparents stories</li>
-            <li>Play with kids at the park</li>
+            {projects.length >= 1 ? projects.map((data,i)=>
+                <li key={i}>{data.post_name}</li>
+            ) : <li>You have no projects yet.</li>
+            }
+
         </ul>
     </div>
 );
+
+/*
+* ejemplo de if ternario
+*
+* { dato == dato ? "si se cumple" : "si no se cumple "}
+* { !daato  && dato ==3 || dato == "perorr? }
+*
+* */

@@ -19,7 +19,7 @@ h2{
     font-size: 18px;
 }
 
-.cards h5{
+.cards{
     font-family: Lato, sans-serif;
     margin: 40px !important;
     margin-left: 80px !important;
@@ -30,4 +30,22 @@ h2{
     color: #13A078;
     font-family: Lato, sans-serif !important;
     font-size: 16px !important;
+}
+
+h5{
+    font-family: Lato, sans-serif;
+    margin: 40px !important;
+    margin-left: 80px !important;
+    font-size: 18px;
+}
+
+.align-header{
+    display: flex
+}
+
+.button-update{
+    width:400px;
+    position: absolute;
+    right: 50px;
+    top: 90px;
 }

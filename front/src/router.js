@@ -11,9 +11,10 @@ import Schedule from './containers/Profile/Schedule';
 const Router = () => (
     <Switch>
         <Route exact path={"/"} component={Home} />
+            <Route exact path={"/Profile"} component={Profile} />
         <Route exact path={"/Projects"} component={Projects} />
         <Route exact path={"/ProjectDetails/:id"} component={ProjectDetails} />
-        <Route exact path={"/Profile"} component={Profile} />
+
         <Route exact path={"/FAQ"} component={FAQ} />
         <Route exact path={"/Schedule"} component={Schedule} />
     </Switch>
